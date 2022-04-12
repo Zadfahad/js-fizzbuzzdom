@@ -1,16 +1,22 @@
 //ciclo per dividere in numeri tra fizz, buzz, e dom
 
-for(let i = 0; i<=100; i++){
-    let fizz;
-    let buzz;
-    let fizzbuzz;
+const rowWrapper = document.getElementById ("wrapper") ;
 
-    const rowWrapper = document.querySelector('.row');
 
-    if (i % 15 == 0) console.log("FizzBuzz");
-    else if (i % 3 == 0) console.log("Fizz");
-    else if (i % 5 == 0) console.log("Buzz");
-    else console.log(i);
+for(let i = 1; i<=100; i++){
+    let result = i;
+     
+    if (i % 15 === 0) {
+        result = "fizzbuzz";
+    }
+    else if (i % 3 === 0){
+        result = "fizz";
+    }
+    else if (i % 5 === 0) {
+        result = "buzz";
+    }
+    
 
-    rowWrapper.innerHTML +=  `<div class="box1">${i}</div>`
+    rowWrapper.innerHTML +=  `<div class="box1 ${result}"> ${result}</div>`;
+    
 }
